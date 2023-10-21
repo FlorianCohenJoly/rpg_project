@@ -15,9 +15,12 @@ class Overworld {
             // Establish the camera position
             const cameraPerson = this.maps.gameObjects.hero;
 
+
+            // Update all objects
             Object.values(this.maps.gameObjects).forEach(object => {
                 object.update({
                     arrow: this.directionInput.direction,
+                    map: this.maps,
 
                 });
             });
@@ -43,6 +46,7 @@ class Overworld {
 
     init() {
         this.maps = new OverworldMap(window.OverworldMap.DemoRoom);
+        this.maps.mountObjects();
 
         this.directionInput = new DirectionInput();
         this.directionInput.init();
