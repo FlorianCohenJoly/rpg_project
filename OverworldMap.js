@@ -9,7 +9,7 @@ class OverworldMap {
         this.upperImage = new Image();
         this.upperImage.src = config.upperSrc;
 
-        this.isCutscenePlaying = true;
+        this.isCutscenePlaying = false;
     }
 
     drawLowerImage(ctx, cameraPerson) {
@@ -57,6 +57,12 @@ class OverworldMap {
             await eventHandler.init();
         }
         this.isCutscenePlaying = false;
+
+
+        Object.values(this.gameObjects).forEach(object => object.doBehaviorEvent(this))
+
+
+
     }
 
 
@@ -112,7 +118,6 @@ window.OverworldMap = {
                     { type: "walk", direction: "down" },
                 ]
             }),
-
         },
 
         walls: {
