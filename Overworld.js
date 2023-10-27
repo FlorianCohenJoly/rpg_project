@@ -77,15 +77,19 @@ class Overworld {
 
         this.startGameLoop();
 
-        // this.map.startCutscene([
+        this.map.startCutscene([
 
-        //     { who: "hero", type: "walk", direction: "down" },
-        //     { who: "hero", type: "walk", direction: "down" },
-        //     { who: "npcA", type: "walk", direction: "up" },
-        //     { who: "npcA", type: "walk", direction: "left" },
-        //     { who: "hero", type: "stand", direction: "right", time: 200 },
-        //     { type: "textMessage", text: "Salut mec, Appuie sur les flèches de ton clavier pour te déplacer" },
-        // ])
+            { who: "hero", type: "walk", direction: "down" },
+            { who: "hero", type: "walk", direction: "down" },
+            { who: "npcA", type: "walk", direction: "up" },
+            { who: "npcA", type: "walk", direction: "left" },
+            { who: "hero", type: "stand", direction: "right", time: 200 },
+            { type: "textMessage", text: "Salut mec, Appuie sur les flèches de ton clavier pour te déplacer, et appuis sur la touche Entrer pour passer au dialogue suivant" },
+            { type: "textMessage", text: "Tu peux prend la porte du haut pour te manger un giga refus ou prendre la porte du bas pour disparaitre" },
+            { type: "textMessage", text: "ou prendre la porte du bas pour disparaitre" },
+
+
+        ])
 
     }
 }
