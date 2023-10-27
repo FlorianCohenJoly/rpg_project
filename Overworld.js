@@ -45,30 +45,33 @@ class Overworld {
         step();
     }
 
+    bindActionInput() {
+        new KeyPressListener("Enter", () => {
+            // Is there a person here to talk to?
+            this.map.checkForActionCutscene()
+        })
+    }
+
     init() {
         this.map = new OverworldMap(window.OverworldMap.DemoRoom);
         this.map.mountObjects();
+
+        this.bindActionInput();
 
         this.directionInput = new DirectionInput();
         this.directionInput.init();
 
         this.startGameLoop();
 
-        this.map.startCutscene([
+        // this.map.startCutscene([
 
-            { who: "hero", type: "walk", direction: "down" },
-            { who: "hero", type: "walk", direction: "down" },
-            { who: "npcA", type: "walk", direction: "up" },
-            { who: "npcA", type: "walk", direction: "left" },
-            { who: "hero", type: "stand", direction: "right", time: 200 },
-            { type: "textMessage", text: "Salut mec, Appuie sur les flèches de ton clavier pour te déplacer" },
-
-
-            // { who: "npcA", type: "walk", direction: "left" },
-            // { who: "npcA", type: "walk", direction: "left" },
-            // { who: "npcA", type: "stand", direction: "up", time: 800 },
-
-        ])
+        //     { who: "hero", type: "walk", direction: "down" },
+        //     { who: "hero", type: "walk", direction: "down" },
+        //     { who: "npcA", type: "walk", direction: "up" },
+        //     { who: "npcA", type: "walk", direction: "left" },
+        //     { who: "hero", type: "stand", direction: "right", time: 200 },
+        //     { type: "textMessage", text: "Salut mec, Appuie sur les flèches de ton clavier pour te déplacer" },
+        // ])
 
     }
 }
