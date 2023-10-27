@@ -119,8 +119,10 @@ window.OverworldMap = {
                 talking: [
                     {
                         events: [
-                            { type: "textMessage", text: "Salut mec, Appuie sur les flèches de ton clavier pour te déplacer" },
-                            { type: "textMessage", text: "Salut" },
+                            { type: "textMessage", text: "Salut mec," },
+                            { type: "textMessage", text: "donne moi ton num" },
+                            { who: "hero", type: "walk", direction: "up" },
+
 
                         ]
                     }
