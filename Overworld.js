@@ -52,26 +52,40 @@ class Overworld {
         })
     }
 
-    init() {
-        this.map = new OverworldMap(window.OverworldMap.DemoRoom);
+    bindHeroPositionCheck() {
+        document.addEventListener("PersonWalkingComplete", e => {
+            if (e.detail.whoId === "hero") {
+                this.map.checkForFootstepCutscene();
+            }
+        });
+    }
+
+    startMap(mapConfig) {
+        this.map = new OverworldMap(mapConfig);
+        this.map.overworld = this;
         this.map.mountObjects();
+    }
+
+    init() {
+        this.startMap(window.OverworldMap.DemoRoom);
 
         this.bindActionInput();
+        this.bindHeroPositionCheck();
 
         this.directionInput = new DirectionInput();
         this.directionInput.init();
 
         this.startGameLoop();
 
-        this.map.startCutscene([
+        // this.map.startCutscene([
 
-            { who: "hero", type: "walk", direction: "down" },
-            { who: "hero", type: "walk", direction: "down" },
-            { who: "npcA", type: "walk", direction: "up" },
-            { who: "npcA", type: "walk", direction: "left" },
-            { who: "hero", type: "stand", direction: "right", time: 200 },
-            { type: "textMessage", text: "Salut mec, Appuie sur les flèches de ton clavier pour te déplacer" },
-        ])
+        //     { who: "hero", type: "walk", direction: "down" },
+        //     { who: "hero", type: "walk", direction: "down" },
+        //     { who: "npcA", type: "walk", direction: "up" },
+        //     { who: "npcA", type: "walk", direction: "left" },
+        //     { who: "hero", type: "stand", direction: "right", time: 200 },
+        //     { type: "textMessage", text: "Salut mec, Appuie sur les flèches de ton clavier pour te déplacer" },
+        // ])
 
     }
 }
