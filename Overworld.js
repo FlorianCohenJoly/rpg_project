@@ -55,11 +55,14 @@ class Overworld {
         this.startGameLoop();
 
         this.map.startCutscene([
-            { who: "hero", type: "walk", direction: "down" },
-            { who: "hero", type: "walk", direction: "down" },
-            { who: "npcA", type: "walk", direction: "left" },
-            { who: "npcA", type: "walk", direction: "left" },
-            { who: "npcA", type: "stand", direction: "up", time: 800 },
+
+            { type: "textMessage", text: "Salut mec, Appuie sur les flèches de ton clavier pour te déplacer" },
+
+            // { who: "hero", type: "walk", direction: "down" },
+            // { who: "hero", type: "walk", direction: "down" },
+            // { who: "npcA", type: "walk", direction: "left" },
+            // { who: "npcA", type: "walk", direction: "left" },
+            // { who: "npcA", type: "stand", direction: "up", time: 800 },
 
         ])
 
