@@ -20,15 +20,16 @@
 
 .TextMessage_p{
     margin: 0;
-    font-size: 12px;
+    font-size: 10px;
+    font-family:'Times New Roman', Times, serif
 }
 
 .TextMessage_button{
     margin: 0;
     font-size: 8px;
     padding: 0;
-    -webkit-appearance: none;
     background: none;
+    -webkit-appearance: none;
     border: 0;
     font-family: inherit;
     cursor: pointer;
