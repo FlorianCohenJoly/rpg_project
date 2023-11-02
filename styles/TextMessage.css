@@ -24,12 +24,20 @@
     font-family:'Times New Roman', Times, serif
 }
 
+.TextMessage span{
+    opacity: 0;
+}
+
+.TextMessage span.revealed{
+    opacity: 1;
+}
+
 .TextMessage_button{
     margin: 0;
     font-size: 8px;
     padding: 0;
     background: none;
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     border: 0;
     font-family: inherit;
     cursor: pointer;
